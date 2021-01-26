@@ -41,8 +41,24 @@ class Playlist:
  
   def remove_song(self, title):
     pass
+    previous_song = None
+    current_song = self.__first_song
 
+    if current_song == None:
+      print('Playlist is empty. No songs to remove.')
+      return
 
+    while current_song.get_title() != title and current_song.get_next_song() != None:
+      previous_song = current_song
+      current_song = current_song.get_next_song()
+
+    # If I reach the end of the linked list 
+    if current_song.get_title() != title and current_song.get_next_song() == None:
+      print(f'Could not find song title {title} in the playlist.')
+    
+    # When code enters here, that means we've found the song
+    next_song = current_song.get_next_song()
+    previous_song.set_next_song(next_song)
 
   # TODO: Create a method called length, which returns the number of songs in the playlist.
 
