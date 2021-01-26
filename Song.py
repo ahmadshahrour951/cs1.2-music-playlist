@@ -27,7 +27,13 @@ class Song:
 
   # TODO: Create a setter method for the next_song attribute, called set_next_song
   def set_next_song(self, next_title):
-    pass
+    if not isinstance(next_title, str):
+      return print(f"ERROR: Failed to set title, {next_title} is not type string")
+      
+    if not next_title.istitle():
+      return print(f"ERROR: Failed to set title, {next_title} is not title case")
+    
+    self.__next_song = next_title
 
 
   # TODO: Using the __str___ dunder method, return a string of the song title.
