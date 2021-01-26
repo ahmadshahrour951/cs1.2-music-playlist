@@ -12,8 +12,13 @@ class Song:
   
   # TODO: Create a setter method for the next_song attribute, called set_title. Make sure titles are type cased to strings and are Title Cased.
   def set_title(self, title):
-    pass
-
+    if not isinstance(title, str):
+      return print(f"ERROR: Failed to set title, {title} is not type string")
+      
+    if not title.istitle():
+      return print(f"ERROR: Failed to set title, {title} is not title case")
+      
+    self.__title = title
 
   # TODO: Create a getter method for the next_song attribute, called get_next_song
   def get_next_song(self):
