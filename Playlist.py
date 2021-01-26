@@ -83,5 +83,22 @@ class Playlist:
 
   def print_songs(self):
     pass
+    current_song = self.__first_song
+    counter = 1
+
+    if current_song == None:
+      print("Your playlist has no songs!")
+      return
+    
+    
+    while current_song.get_next_song() != None:
+      print(f"{counter}. {current_song}")
+
+      current_song = current_song.get_next_song()
+      counter += 1
+    
+    # Print last song
+    print(f"{counter}. {current_song}")
+
 
   
