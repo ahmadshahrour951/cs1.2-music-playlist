@@ -64,9 +64,17 @@ class Playlist:
 
   def length(self):
     pass
+    current_song = self.__first_song
+    counter = 1
 
+    if current_song == None:
+      return 0
 
-  # TODO: Create a method called print_songs that prints a numbered list of the songs in the playlist.
+    while current_song.get_next_song() != None:
+      current_song = current_song.get_next_song()
+      counter += 1
+    
+    return counter 
 
   # Example:
   # 1. Song Title 1
