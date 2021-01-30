@@ -9,9 +9,11 @@ class Song:
   
 
   def set_title(self, title):
+    # check if title is an instance of str
     if not isinstance(title, str):
       return print(f"ERROR: Failed to set title, {title} is not type string")
-      
+    
+    # check if title is title cased
     if not title.istitle():
       return print(f"ERROR: Failed to set title, {title} is not title case")
       
@@ -23,6 +25,7 @@ class Song:
 
 
   def set_next_song(self, next_song):
+    # make sure the next_song is of type Song or None
     if not isinstance(next_song, Song) and next_song is not None:
       return print(f"ERROR: Failed to set next song, {next_song} is not type Song")
     

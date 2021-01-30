@@ -105,21 +105,25 @@ class Playlist:
     print(f"{counter}. {current_song}")
 
   def insert_song(self, title, index):
-      current_song = self.__first_song
-      current_ind = 0
-
+      # Checking if the input is valid
       self_len = self.length()
       if index + 1 > self_len:
         print("ERROR: index is out of range")
         return
       
+      current_song = self.__first_song
+      current_ind = 0
+      
+      #Loop until the indeces are equal
       while current_ind != index:
         current_song = current_song.get_next_song()
         current_ind += 1
       
+      # we found the song in the current index,
       song_to_insert = Song(title)
       next_song = current_song.get_next_song()
-
+      
+      # Reassign relationships
       song_to_insert.set_next_song(next_song)
       current_song.set_next_song(song_to_insert)
 
