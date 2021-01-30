@@ -23,7 +23,7 @@ class Song:
 
 
   def set_next_song(self, next_song):
-    if not isinstance(next_song, Song):
+    if not isinstance(next_song, Song) and next_song is not None:
       return print(f"ERROR: Failed to set next song, {next_song} is not type Song")
     
     self.__next_song = next_song

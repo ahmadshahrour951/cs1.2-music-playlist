@@ -16,6 +16,7 @@ while True:
   3: To remove a song from playlist
   4: To search for song in playlist
   5: Return the length of the playlist
+  6: To reverse the playlist
   =====================================
 
   ''')
@@ -56,6 +57,10 @@ while True:
   # Option 5: Return the length of the playlist
   elif user_selection == 5:
     print(f"This set list has {playlist.length()} songs.")
+  
+  
+  elif user_selection == 6:
+    playlist.reverse()
 
   # Message for invalid input
   else:
